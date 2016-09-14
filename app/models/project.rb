@@ -1,8 +1,6 @@
 class Project < ApplicationRecord
-  belongs_to :user
+  has_many :project_users
   has_many :packages
-
-  enum source: [:github, :npm]
   
   validates_presence_of :name
 end

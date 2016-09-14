@@ -14,8 +14,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project ||= Project.new
-    @project.source ||= :github
+    @project = Project.new
     render :new
   end
 
@@ -26,8 +25,8 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
-    @project.source = params[:source]
+    @project = Project.find_or_create_by(name: params[:project][:name])
+    @project.project_users.find_or_create_by(user_id: current_user.id)
 
     respond_to do |format|
       if @project.save
@@ -62,18 +61,6 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def new_github
-    @project = Project.new
-    @project.source = :github
-    new
-  end
-  
-  def new_npm
-    @project = Project.new
-    @project.source = :npm
-    new
   end
 
   private

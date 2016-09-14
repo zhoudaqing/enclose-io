@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   resources :projects
   resources :packages
 
-  get '/projects/new/github' => 'projects#new_github', as: :new_github
-  get '/projects/new/npm' => 'projects#new_npm', as: :new_npm
-
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
