@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="pull-left">
+  <h4><%= @project.name %></h4>
+  <p><a href="<%= @project.source %>"><%= @project.source %></a></p>
+</div>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<p class="pull-right">
+  <a class="btn btn-secondary" href="<%= project_packages_path(@project) %>" data-method="post" role="button"><i class="fa fa-refresh" aria-hidden="true"></i> Check Releases</a>
+  <a class="btn btn-danger" href="<%= project_path @project %>" data-method="delete" data-confirm="Are you sure?" role="button">Delete</a>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>File Name</th>
+      <th>Packed at</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>

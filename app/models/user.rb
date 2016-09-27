@@ -2,16 +2,12 @@ class User < ApplicationRecord
   has_many :project_users
   has_many :projects, through: :project_users
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :registerable, 
-  devise :database_authenticatable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :omniauthable, :trackable
 
   def self.from_omniauth(auth)
-   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+   where(github_uid: auth.uid).first_or_create do |user|
      user.login = auth.info.nickname
      user.email = auth.info.email
-     user.password = Devise.friendly_token[0,20]
      user.name = auth.info.name
      user.github_access_token = auth.credentials.token
    end
