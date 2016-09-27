@@ -1,9 +1,7 @@
 class PackagesController < ApplicationController
   def create
-    
-  end
-
-  def index
-    
+    @project = Project.find(params[:project_id])
+    @project.check
+    redirect_to @project, notice: 'Releases was successfully checked.'
   end
 end

@@ -7,10 +7,10 @@
       For example <code>coffee-script</code>, which corresponds to <a href="https://www.npmjs.com/package/coffee-script">https://www.npmjs.com/package/coffee-script</a>.</p>
   </div>
   <div class="col-sm-4">
-    <%= image_tag 'npm.png', width: '210' %>
+    <a href="https://www.npmjs.com/"><%= image_tag 'npm.png', width: '210' %></a>
   </div>
 </div>
-<%= simple_form_for @project, url: projects_path(source: :npm) do |f| %>
+<%= simple_form_for @project do |f| %>
   <%= f.input :name, label: 'Module', placeholder: 'coffee-script' %>
   <%= f.button :submit %>
 <% end %>

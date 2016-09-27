@@ -15,18 +15,24 @@ ActiveRecord::Schema.define(version: 20160913082953) do
   enable_extension "plpgsql"
 
   create_table "packages", force: :cascade do |t|
-    t.integer  "project_id"
-    t.string   "name"
+    t.integer  "project_id", null: false
+    t.string   "name", null: false
+    t.string   "version"
+    t.integer  "phase", default: 0, null: false
+    t.integer  "kind", null: false
+    t.string   "node_version"
+    t.integer  "size"
+    t.datetime "done_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "source"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name", null: false
+    t.string   "latest_version", null: false
+    t.json     "npm_payload", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "project_users", force: :cascade do |t|
@@ -40,13 +46,14 @@ ActiveRecord::Schema.define(version: 20160913082953) do
     t.string   "email",                  default: "",    null: false
     t.string   "login",                                  null: false
     t.string   "name",                                   null: false
-    t.string   "github_uid",                             null: false
-    t.string   "github_access_token",                    null: false
     t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "github_uid",                             null: false
+    t.string   "github_access_token",                    null: false
+    t.json     "github_payload",                         null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.index ["github_uid"], unique: true, using: :btree

@@ -12,7 +12,7 @@
   <thead>
     <tr>
       <th>Project Name</th>
-      <th>Latest Package</th>
+      <th>Latest Version</th>
       <% if params[:mine] %>
         <th>Operation</th>
       <% else %>
@@ -24,10 +24,10 @@
     <% @projects.each do |x| %>
     <tr>
       <th scope="row"><a href="<%= project_path x %>"><%= x.name %></a></th>
-      <td><%= x.packages.recent.first&.created_at || 'N/A' %></td>
+      <td><%= x.latest_version %></td>
       <td>
       <% if params[:mine] %>
-        <a href="<%= project_path(x) %>" data-method="delete"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
+        <a href="<%= project_path(x) %>" data-method="delete"><button type="button" class="btn btn-danger btn-sm" data-confirm="Are you sure?">Delete</button></a>
       <% else %>
         <%= x.packages.count %>
       <% end %>

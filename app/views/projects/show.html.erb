@@ -1,6 +1,6 @@
 <div class="pull-left">
   <h4><%= @project.name %></h4>
-  <p><a href="<%= @project.source %>"><%= @project.source %></a></p>
+  <p><a href="<%= @project.source_url %>"><%= @project.source_url %></a></p>
 </div>
 
 <p class="pull-right">
@@ -17,5 +17,21 @@
     </tr>
   </thead>
   <tbody>
+    <% @project.packages.order('version DESC, name ASC, kind ASC').each do |x| %>
+      <% if x.doing? %>
+        <tr class="doing">
+          <th scope="row"><%= file_item x %></th>
+          <td>Packing...</td>
+          <td>Packing...</td>
+        </tr>
+      <% elsif x.done? %>
+        <tr class="done">
+          <th scope="row"><a href="<%= project_package @project, x %>"><%= file_item x %></a></th>
+          <td><%= x.done_at %></td>
+          <td><%= number_to_human_size x.size %></td>
+        </tr>
+      <% else; raise 'noop' %>
+      <% end %>
+    <% end %>
   </tbody>
 </table>

@@ -16,14 +16,11 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    params[:project][:name].strip!
     @project = Project.find_or_create_by(name: params[:project][:name])
+    render :new and return unless @project.valid?
     @project.project_users.find_or_create_by(user_id: current_user.id)
-
-    if @project.save
-      redirect_to @project, notice: 'Project was successfully created.'
-    else
-      render :new
-    end
+    redirect_to @project, notice: 'Project was successfully created.'
   end
 
   def destroy
