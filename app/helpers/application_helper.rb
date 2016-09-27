@@ -3,8 +3,6 @@ module ApplicationHelper
     case x.kind
     when 'exe32'
       '<i class="fa fa-windows" aria-hidden="true"></i>'
-    when 'msi32'
-      '<i class="fa fa-windows" aria-hidden="true"></i>'
     when 'linux64'
       '<i class="fa fa-linux" aria-hidden="true"></i>'
     when 'mac64'
