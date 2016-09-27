@@ -15,6 +15,7 @@ gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
 gem 'retina_tag', '~> 1.4', '>= 1.4.1'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
+gem 'airbrake', '~> 5.5', require: false
 
 group :development, :test do
   gem 'byebug', platform: :mri
