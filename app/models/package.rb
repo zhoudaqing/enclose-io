@@ -1,12 +1,12 @@
 class Package < ApplicationRecord
   belongs_to :project
   KINDS = {
-    # 'exe32' => 'x86.exe',
+    'exe32' => 'x86.exe',
     'linux64' => 'x64-linux',
-    # 'mac64' => 'x64-darwin'
+    'mac64' => 'x64-darwin'
   }
   enum kind: KINDS.keys
-  enum phase: ['doing', 'done']
+  enum phase: ['pending', 'doing', 'done']
 
   def suffix
     KINDS[kind]

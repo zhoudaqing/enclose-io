@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20160913082953) do
     t.string   "version"
     t.integer  "phase", default: 0, null: false
     t.integer  "kind", null: false
-    t.string   "node_version"
     t.integer  "size"
+    t.string   "url"
     t.datetime "done_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

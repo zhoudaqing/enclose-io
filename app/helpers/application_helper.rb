@@ -9,4 +9,13 @@ module ApplicationHelper
       '<i class="fa fa-apple" aria-hidden="true"></i>'
     end.html_safe + ' ' + x.filename
   end
+  
+  def phase_name(phase)
+    case phase
+    when 'pending'
+      'Pending...'
+    when 'doing'
+      'Compiling...'
+    end
+  end
 end

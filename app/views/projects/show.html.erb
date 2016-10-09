@@ -12,25 +12,23 @@
   <thead>
     <tr>
       <th>File Name</th>
-      <th>Packed at</th>
+      <th>Created at</th>
       <th>Size</th>
     </tr>
   </thead>
   <tbody>
     <% @project.packages.order('version DESC, name ASC, kind ASC').each do |x| %>
-      <% if x.doing? %>
-        <tr class="doing">
-          <th scope="row"><%= file_item x %></th>
-          <td>Packing...</td>
-          <td>Packing...</td>
-        </tr>
-      <% elsif x.done? %>
+      <% if x.done? %>
         <tr class="done">
-          <th scope="row"><a href="<%= project_package @project, x %>"><%= file_item x %></a></th>
+          <th scope="row"><a href="<%= x.url %>"><%= file_item x %></a></th>
           <td><%= x.done_at %></td>
           <td><%= number_to_human_size x.size %></td>
         </tr>
-      <% else; raise 'noop' %>
+      <% else %>
+        <tr class="doing">
+          <th scope="row"><%= file_item x %></th>
+          <td colspan="2"><%= phase_name x.phase %></td>
+        </tr>
       <% end %>
     <% end %>
   </tbody>
