@@ -9,4 +9,3 @@ making your app ready to be used out-of-the-box.
 [![Build Status](https://travis-ci.org/enclose-io/enclose-io.svg)](https://travis-ci.org/enclose-io/enclose-io)
 [![Code Climate](https://codeclimate.com/github/enclose-io/enclose-io/badges/gpa.svg)](https://codeclimate.com/github/enclose-io/enclose-io)
 [![codecov.io](https://codecov.io/github/enclose-io/enclose-io/coverage.svg?branch=master)](https://codecov.io/github/enclose-io/enclose-io?branch=master)
-[![Join the chat at https://gitter.im/enclose-io/enclose-io](https://badges.gitter.im/enclose-io/enclose-io.svg)](https://gitter.im/enclose-io/enclose-io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
