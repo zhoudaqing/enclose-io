@@ -1,6 +1,9 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  
   def index
     if params[:mine]
+      authenticate_user!
       @projects = current_user.projects
     else
       @projects = Project.hot

@@ -1,11 +1,5 @@
 class PackagesController < ApplicationController
-  auth_opts = {
-    name: ENV['ENCLOSE_IO_AUTH_NAME'],
-    password: ENV['ENCLOSE_IO_AUTH_SECRET'],
-    only: :update
-  }
-  http_basic_authenticate_with auth_opts
-  skip_before_action :verify_authenticity_token, only: :update
+  before_action :authenticate_user!, only: [:update]
 
   def create
     @project = Project.find(params[:project_id])
@@ -20,6 +14,7 @@ class PackagesController < ApplicationController
   
   def update
     begin
+      raise 'Admin Only!' unless current_user.admin?
       @project = Project.find(params[:project_id])
       @package = @project.packages.find(params[:id])
       if @package.update(package_params)
