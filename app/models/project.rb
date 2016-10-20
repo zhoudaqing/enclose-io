@@ -56,7 +56,7 @@ class Project < ApplicationRecord
     errors.add(:name, '<code>'.html_safe + name + %Q{</code>
       contains no binaries.<br>
       Please add a <code>bin</code> entry to your <code>package.json</code>
-      first, e.g. <code>"bin"=>{"coffee"=>"./bin/coffee"}</code>.
+      first, e.g. <code>"bin": {"coffee": "./bin/coffee"}</code>.
     }.html_safe) if self.latest_version.blank?
   end
   
