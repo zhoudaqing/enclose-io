@@ -13,7 +13,7 @@ http://enclose.io/
 
 ## Installation
 
-### Linux - x86_64
+### Linux (x86_64)
 
 Suppose that you were using CentOS release 5.8 on a x86_64 machine,
 then execute the following commands to set up the environment.
@@ -33,3 +33,8 @@ then execute the following commands to set up the environment.
     
     scl enable devtoolset-2 bash
     echo source /opt/rh/devtoolset-2/enable >> ~/.bash_profile
+
+### Mac OS X
+
+### Windows
+
