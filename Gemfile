@@ -18,6 +18,8 @@ gem 'retina_tag', '~> 1.4', '>= 1.4.1'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'airbrake', '~> 5.5'
+gem 'carrierwave', '~> 0.11.2'
+gem 'carrierwave-aws', '~> 1.0', '>= 1.0.2'
 gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.1'
 
 group :development, :test do

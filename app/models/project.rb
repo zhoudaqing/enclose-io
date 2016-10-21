@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   has_many :project_users
-  has_many :packages, dependent: :destroy
+  has_many :packages, dependent: :destroy # FIXME might be slow due to AWS S3
   
   validates :name, presence: true, length: { maximum: 214 }
   validate :validate_with_npm, if: 'errors.blank?'
