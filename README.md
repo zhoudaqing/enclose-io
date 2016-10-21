@@ -38,3 +38,7 @@ then execute the following commands to set up the environment.
 
 ### Windows
 
+## License
+
+Enclose.IO is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
