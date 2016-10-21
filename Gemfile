@@ -21,15 +21,15 @@ gem 'airbrake', '~> 5.5'
 gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.1'
 
 group :development, :test do
-  gem 'byebug', platform: :mri
+  gem 'byebug', '>= 9.0.6', platform: :mri
   gem 'pry', '>= 0.10.4'
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
 end
 
 group :development do
-  gem 'web-console'
+  gem 'web-console', '>= 3.3.1'
   gem 'listen', '~> 3.0.5'
-  gem 'spring'
+  gem 'spring', '>= 2.0.0'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
