@@ -33,6 +33,7 @@
                   <%= current_user.name %>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <% if current_user.admin? %><a class="dropdown-item" href="<%= rails_admin_path %>" data-turbolinks="false">Administration</a><% end %>
                   <a class="dropdown-item" href="<%= new_project_path %>">New Project</a>
                   <a class="dropdown-item" href="<%= projects_path(mine: true) %>">My Projects</a>
                   <a class="dropdown-item" href="<%= destroy_user_session_path %>" data-method="delete">Sign out</a>
@@ -60,7 +61,6 @@
       <% end %>
 
       <%= yield %>
-
     </div>
   </body>
 </html>

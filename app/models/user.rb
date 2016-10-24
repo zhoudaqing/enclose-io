@@ -1,8 +1,12 @@
 class User < ApplicationRecord
+  ADMINISTRATORS = [ 'pmq20', 'shaoshuai0102', 'leoner', 'fengmk2' ]
+
   has_many :project_users
   has_many :projects, through: :project_users
 
   devise :database_authenticatable, :omniauthable, :trackable
+
+  scope :administrators, -> { where(login: ADMINISTRATORS) }
 
   def self.from_omniauth(auth)
    where(github_uid: auth.uid).first_or_create do |user|
@@ -20,5 +24,13 @@ class User < ApplicationRecord
   
   def authenticatable_salt
     nil
+  end
+  
+  def admin?
+    ADMINISTRATORS.include? login
+  end
+
+  def github_link
+    "https://github.com/#{login}"
   end
 end
