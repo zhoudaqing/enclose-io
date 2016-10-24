@@ -1,5 +1,6 @@
 class Package < ApplicationRecord
   belongs_to :project
+  after_create :enqueue
   mount_uploader :file, AttachmentUploader
 
   KINDS = {
@@ -16,5 +17,10 @@ class Package < ApplicationRecord
 
   def filename
     "#{name}-#{version}-#{suffix}"
+  end
+  
+  def enqueue
+    CompilerWorker.perform_async(id)
+    true
   end
 end
