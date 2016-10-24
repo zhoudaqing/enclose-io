@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  ADMINISTRATORS = [ 'pmq20', 'shaoshuai0102', 'leoner', 'fengmk2' ]
+  ADMINISTRATORS = [ 'pmq20', 'shaoshuai0102' ]
 
   has_many :project_users
   has_many :projects, through: :project_users
@@ -17,15 +17,15 @@ class User < ApplicationRecord
      user.github_payload = auth
    end
   end
-  
+
   def github_client
     @github_client ||= Octokit::Client.new(access_token: github_access_token)
   end
-  
+
   def authenticatable_salt
     nil
   end
-  
+
   def admin?
     ADMINISTRATORS.include? login
   end

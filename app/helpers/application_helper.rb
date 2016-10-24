@@ -1,7 +1,7 @@
 module ApplicationHelper
   def file_item(x)
     case x.kind
-    when 'exe32'
+    when 'win32'
       '<i class="fa fa-windows" aria-hidden="true"></i>'
     when 'linux64'
       '<i class="fa fa-linux" aria-hidden="true"></i>'

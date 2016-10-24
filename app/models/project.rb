@@ -6,10 +6,7 @@ class Project < ApplicationRecord
   validate :validate_with_npm, if: 'errors.blank?'
   validate :validate_initial_version, if: 'npm_payload.present?'
 
-  after_create do
-    allocate_for(latest_version)
-    true
-  end
+  after_create :allocate_for_latest
 
   def source_url
     "https://www.npmjs.com/package/#{URI.escape name}"
@@ -61,10 +58,13 @@ class Project < ApplicationRecord
   end
   
   def allocate_for(version)
-    npm_payload['versions'][version]['bin'].each do |name, path|
-      Executable.kinds.each do |k, v|
-        executables.find_or_create_by!(name: name, version: version, kind: k)
-      end
+    npm_payload['versions'][version]['bin'].each do |name, _|
+      Executable.create_for!(self, name, version)
     end
+  end
+
+  def allocate_for_latest
+    allocate_for(latest_version)
+    true
   end
 end

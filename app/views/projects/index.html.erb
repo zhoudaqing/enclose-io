@@ -3,11 +3,6 @@
   <p class="pull-right"><a class="btn btn-secondary" href="<%= new_project_path %>" role="button">New Project</a></p>
 <% end %>
 
-<form class="bd-search hidden-sm-down">
-  <p><input name="q" type="text" class="form-control" id="search-input" placeholder="Search for Projects..." autocomplete="off"></p>
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
-</form>
-
 <table class="table">
   <thead>
     <tr>
@@ -29,7 +24,7 @@
       <% if params[:mine] %>
         <a href="<%= project_path(x) %>" data-method="delete"><button type="button" class="btn btn-danger btn-sm" data-confirm="Are you sure?">Delete</button></a>
       <% else %>
-        <%= x.executables.count %>
+        <%= x.executables.count(:id) %>
       <% end %>
       </td>
     </tr>

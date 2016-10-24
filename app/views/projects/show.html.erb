@@ -20,9 +20,9 @@
     <% @project.executables.order('version DESC, name ASC, kind ASC').each do |x| %>
       <% if x.done? %>
         <tr class="done">
-          <th scope="row"><a href="<%= x.url %>"><%= file_item x %></a></th>
+          <th scope="row"><a href="<%= x.file.url %>"><%= file_item x %></a></th>
           <td><%= x.done_at %></td>
-          <td><%= number_to_human_size x.size %></td>
+          <td><%= number_to_human_size x.file_size %></td>
         </tr>
       <% else %>
         <tr class="doing">
