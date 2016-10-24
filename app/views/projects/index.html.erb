@@ -16,7 +16,7 @@
       <% if params[:mine] %>
         <th>Operation</th>
       <% else %>
-        <th>Packages Count</th>
+        <th>Executables</th>
       <% end %>
     </tr>
   </thead>
@@ -29,7 +29,7 @@
       <% if params[:mine] %>
         <a href="<%= project_path(x) %>" data-method="delete"><button type="button" class="btn btn-danger btn-sm" data-confirm="Are you sure?">Delete</button></a>
       <% else %>
-        <%= x.packages.count %>
+        <%= x.executables.count %>
       <% end %>
       </td>
     </tr>

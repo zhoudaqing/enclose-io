@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   has_many :project_users
-  has_many :packages, dependent: :destroy # FIXME might be slow due to AWS S3
+  has_many :executables, dependent: :destroy # FIXME might be slow due to AWS S3
   
   validates :name, presence: true, length: { maximum: 214 }
   validate :validate_with_npm, if: 'errors.blank?'
@@ -62,8 +62,8 @@ class Project < ApplicationRecord
   
   def allocate_for(version)
     npm_payload['versions'][version]['bin'].each do |name, path|
-      Package.kinds.each do |k, v|
-        packages.find_or_create_by!(name: name, version: version, kind: k)
+      Executable.kinds.each do |k, v|
+        executables.find_or_create_by!(name: name, version: version, kind: k)
       end
     end
   end

@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-sm-8">
     <p>
-      Please enter a npm module name.<br>
+      Please enter a npm package name.<br>
       For example <code>coffee-script</code>, which corresponds to <a href="https://www.npmjs.com/package/coffee-script">https://www.npmjs.com/package/coffee-script</a>.</p>
   </div>
   <div class="col-sm-4">
@@ -11,6 +11,6 @@
   </div>
 </div>
 <%= simple_form_for @project do |f| %>
-  <%= f.input :name, label: 'Module', placeholder: 'coffee-script' %>
+  <%= f.input :name, placeholder: 'coffee-script' %>
   <%= f.button :submit %>
 <% end %>

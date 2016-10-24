@@ -1,4 +1,4 @@
-class PackagesController < ApplicationController
+class ExecutablesController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @project.check

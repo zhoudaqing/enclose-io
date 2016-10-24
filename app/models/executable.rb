@@ -1,4 +1,4 @@
-class Package < ApplicationRecord
+class Executable < ApplicationRecord
   belongs_to :project
   after_create :enqueue
   mount_uploader :file, AttachmentUploader

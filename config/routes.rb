@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'projects#index'
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth' }
   resources :projects do
-    resources :packages
+    resources :executables
   end
   resources :helps
   authenticate :user, lambda { |u| u.admin? } do
