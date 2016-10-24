@@ -36,6 +36,11 @@ then we could execute commands similar to the following to get started.
     echo source /opt/rh/devtoolset-2/enable >> ~/.bash_profile
 
     # Run Sidekiq
+    git clone git@github.com:enclose-io/enclose-io.git
+    cd enclose-io
+    bundle install
+    git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
+    eval $(heroku config --shell) ENCLOSE_IO_KEEP_WORK_DIR=1 npm_config_registry=http://registry.npm.taobao.org bundle exec sidekiq --concurrency 1 --queue=linux64
 
 ### Mac OS X
 
@@ -54,7 +59,7 @@ then we could execute commands similar to the following to get started.
     bundle install
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     eval $(heroku config --shell) ENCLOSE_IO_MAKE_ARGS=-j4 ENCLOSE_IO_KEEP_WORK_DIR=1 npm_config_registry=http://registry.npm.taobao.org bundle exec sidekiq --concurrency 1 --queue=mac64
-    
+
 ### Windows
 
     # Install Git
