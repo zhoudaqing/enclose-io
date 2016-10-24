@@ -19,12 +19,8 @@ Suppose that a x86_64 machine with CentOS release 5.8 was being used,
 then we could execute commands similar to the following to get started.
 
     # Install Ruby
-    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-    \curl -sSL https://get.rvm.io | bash -s stable
     sudo yum install libyaml-devel readline-devel zlib-devel libffi-devel openssl-devel sqlite-devel
-    rvm install ruby
-    gem update --system
-    gem install bundler
+    # -> follow the instructions at https://rvm.io/
     
     # Install Python
     
@@ -44,6 +40,7 @@ then we could execute commands similar to the following to get started.
 ### Mac OS X
 
     # Install Ruby
+    # -> follow the instructions at https://rvm.io/
 
     # Install Python
     
