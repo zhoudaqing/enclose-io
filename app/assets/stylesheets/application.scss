@@ -1,10 +1,7 @@
-/*
- *= require tether
- *= require bootstrap
- *= require narrow-jumbotron
- *= require font-awesome
- *= require_self
- */
+@import "tether";
+@import "bootstrap";
+@import "narrow-jumbotron";
+@import "font-awesome";
 
 a.logo {
   color: #818a91 !important;
