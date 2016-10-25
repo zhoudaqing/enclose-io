@@ -18,6 +18,7 @@
 //= require ie10-viewport-bug-workaround
 //= require cable
 //= require retina_tag
+//= require rails-timeago
 //= require_self
 
 $( document ).on('turbolinks:load', function() {

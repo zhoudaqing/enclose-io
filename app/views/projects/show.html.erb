@@ -12,7 +12,6 @@
   <thead>
     <tr>
       <th>Executable</th>
-      <th>Created at</th>
       <th>Size</th>
     </tr>
   </thead>
@@ -21,13 +20,12 @@
       <% if x.done? %>
         <tr class="done">
           <th scope="row"><a href="<%= x.file.url %>"><%= file_item x %></a></th>
-          <td><%= x.done_at %></td>
           <td><%= number_to_human_size x.file_size %></td>
         </tr>
       <% else %>
         <tr class="doing">
           <th scope="row"><%= file_item x %></th>
-          <td colspan="2"><%= phase_name x.phase %></td>
+          <td><%= phase_name x.phase %></td>
         </tr>
       <% end %>
     <% end %>

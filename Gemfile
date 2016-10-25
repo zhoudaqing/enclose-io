@@ -22,6 +22,7 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'carrierwave-aws', '~> 1.0', '>= 1.0.2'
 gem 'sidekiq', '~> 4.2', '>= 4.2.3'
 gem 'rails_admin', '~> 1.0'
+gem 'rails-timeago', '~> 2.15'
 
 group :development, :test do
   gem 'byebug', '>= 9.0.6', platform: :mri
