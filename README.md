@@ -56,6 +56,7 @@ then we could execute commands similar to the following to get started.
     # -> https://nodejs.org/
 
     # Install clang and clang++
+    # -> https://developer.apple.com/xcode/download/
 
     # Run Sidekiq
     git clone git@github.com:enclose-io/enclose-io.git
