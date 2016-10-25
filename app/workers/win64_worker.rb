@@ -1,6 +1,6 @@
-class Win32Worker
+class Win64Worker
   include Sidekiq::Worker
-  sidekiq_options queue: 'win32'
+  sidekiq_options queue: 'win64'
 
   def perform(id)
     Executable.find(id).compile!

@@ -5,7 +5,7 @@ class Executable < ApplicationRecord
   mount_uploader :file, AttachmentUploader
 
   KINDS = {
-    'win32' => 'x86.exe',
+    'win64' => 'x64.exe',
     'linux64' => 'linux-x64.gz',
     'mac64' => 'darwin-x64.gz'
   }
