@@ -37,6 +37,10 @@ then we could execute commands similar to the following to get started.
     scl enable devtoolset-2 bash
     echo source /opt/rh/devtoolset-2/enable >> ~/.bash_profile
 
+    # Install Heroku Command Line
+    # -> https://toolbelt.heroku.com/
+    # heroku login
+
     # Run Sidekiq
     git clone git@github.com:enclose-io/enclose-io.git
     cd enclose-io
@@ -58,6 +62,10 @@ then we could execute commands similar to the following to get started.
     # Install clang and clang++
     # -> https://developer.apple.com/xcode/download/
 
+    # Install Heroku Command Line
+    # -> https://toolbelt.heroku.com/
+    # heroku login
+    
     # Run Sidekiq
     git clone git@github.com:enclose-io/enclose-io.git
     cd enclose-io
@@ -79,8 +87,15 @@ then we could execute commands similar to the following to get started.
     # Install Visual Studio    
     # -> http://download.microsoft.com/download/b/e/d/bedddfc4-55f4-4748-90a8-ffe38a40e89f/vs2015.3.com_enu.iso
 
+    # Install Heroku Command Line
+    # -> https://toolbelt.heroku.com/
+    # heroku login
+    
     # Run Sidekiq
-
+    git clone https://github.com/enclose-io/enclose-io.git
+    cd enclose-io
+    bundle install
+    
 ## License
 
 Enclose.IO is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
