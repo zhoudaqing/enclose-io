@@ -96,7 +96,7 @@ then we could execute commands similar to the following to get started.
     cd enclose-io
     bundle install
     FOR /F "delims=" %i IN ('heroku config --shell') DO set %i
-    FOR /F "delims==" %i IN ('heroku config --shell') DO set %i=%%i:'=%
+    FOR /F "delims==" %i IN ('heroku config --shell') DO call set %i=%%i:'=%
     set ENCLOSE_VCBUILD_ARGS=nosign
     set ENCLOSE_IO_KEEP_WORK_DIR=1
     bundle exec sidekiq --concurrency 1 --queue=win64
