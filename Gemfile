@@ -2,11 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-if Dir.exist?(File.expand_path('../../enclose-io-compiler', __FILE__))
-  gem 'enclose-io-compiler', '0.3.0', path: '../enclose-io-compiler'
-else
-  gem 'enclose-io-compiler', '0.3.0'
-end
+gem 'enclose-io-compiler', '0.3.0'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.19.0'

@@ -42,7 +42,6 @@ then we could execute commands similar to the following to get started.
     # heroku login
 
     # Run the worker
-    git clone git@github.com:enclose-io/compiler.git
     git clone git@github.com:enclose-io/enclose-io.git
     cd enclose-io
     bundle install
@@ -68,7 +67,6 @@ then we could execute commands similar to the following to get started.
     # heroku login
     
     # Run the worker
-    git clone git@github.com:enclose-io/compiler.git
     git clone git@github.com:enclose-io/enclose-io.git
     cd enclose-io
     bundle install
@@ -94,7 +92,6 @@ then we could execute commands similar to the following to get started.
     # heroku login
     
     # Run the worker
-    git clone https://github.com/enclose-io/compiler.git
     git clone https://github.com/enclose-io/enclose-io.git
     cd enclose-io
     bundle install
