@@ -290,7 +290,7 @@ DEPENDENCIES
   carrierwave-aws (~> 1.0, >= 1.0.2)
   coffee-rails (~> 4.2)
   devise (~> 4.2)
-  enclose-io-compiler!
+  enclose-io-compiler (= 0.3.0)!
   font-awesome-rails (~> 4.6, >= 4.6.3.1)
   jquery-rails
   listen (~> 3.0.5)
