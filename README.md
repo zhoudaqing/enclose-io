@@ -20,7 +20,7 @@ then we could execute commands similar to the following to get started.
 
     # Install Ruby
     sudo yum install libyaml-devel readline-devel zlib-devel libffi-devel openssl-devel sqlite-devel
-    # -> follow the instructions at https://rvm.io/
+    # -> Follow the instructions of https://rvm.io/
 
     # Install Python
     # -> Make sure that `python --version` gives 2.6 or 2.7
@@ -51,7 +51,7 @@ then we could execute commands similar to the following to get started.
 ### Mac OS X
 
     # Install Ruby
-    # -> follow the instructions at https://rvm.io/
+    # -> Follow the instructions of https://rvm.io/
 
     # Install Python
     # -> Make sure that `python --version` gives 2.6 or 2.7
