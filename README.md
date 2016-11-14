@@ -44,8 +44,8 @@ then we could execute commands similar to the following to get started.
     # Run the worker
     git clone git@github.com:enclose-io/enclose-io.git
     cd enclose-io
-    bundle install
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
+    bundle install
     eval $(heroku config --shell) ENCLOSE_IO_KEEP_WORK_DIR=1 bundle exec sidekiq --concurrency 1 --queue=linux64
 
 ### Mac OS X
@@ -69,8 +69,8 @@ then we could execute commands similar to the following to get started.
     # Run the worker
     git clone git@github.com:enclose-io/enclose-io.git
     cd enclose-io
-    bundle install
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
+    bundle install
     eval $(heroku config --shell) ENCLOSE_IO_MAKE_ARGS=-j4 ENCLOSE_IO_KEEP_WORK_DIR=1 bundle exec sidekiq --concurrency 1 --queue=mac64
 
 ### Windows
@@ -94,8 +94,8 @@ then we could execute commands similar to the following to get started.
     # Run the worker
     git clone https://github.com/enclose-io/enclose-io.git
     cd enclose-io
-    bundle install
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
+    bundle install
     FOR /F "delims=" %i IN ('heroku config --shell') DO set %i
     FOR /F "delims==" %i IN ('heroku config --shell') DO call set %i=%%i:'=%
     set ENCLOSE_VCBUILD_ARGS=nosign
