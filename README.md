@@ -46,6 +46,7 @@ then we could execute commands similar to the following to get started.
     cd enclose-io
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     bundle install
+    export ENCLOSE_IO_MAKE_ARGS=-j4
     eval $(heroku config --shell) nohup bundle exec sidekiq --concurrency 1 --queue=linux64 2>&1 &
 
 ### Mac OS X
@@ -71,6 +72,7 @@ then we could execute commands similar to the following to get started.
     cd enclose-io
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     bundle install
+    export ENCLOSE_IO_MAKE_ARGS=-j4
     eval $(heroku config --shell) nohup bundle exec sidekiq --concurrency 1 --queue=mac64 2>&1 &
 
 ### Windows
@@ -103,7 +105,6 @@ then we could execute commands similar to the following to get started.
     FOR /F "delims=" %i IN ('heroku config --shell') DO set %i
     FOR /F "delims==" %i IN ('heroku config --shell') DO call set %i=%%i:'=%
     set ENCLOSE_VCBUILD_ARGS=nosign
-    set ENCLOSE_IO_KEEP_WORK_DIR=1
     bundle exec sidekiq --concurrency 1 --queue=win64
     
 ## License
