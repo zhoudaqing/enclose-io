@@ -99,9 +99,9 @@ then we could execute commands similar to the following to get started.
     FOR /F "delims==" %i IN ('heroku config --shell') DO call set %i=%%i:'=%
     set ENCLOSE_VCBUILD_ARGS=nosign
     set ENCLOSE_IO_KEEP_WORK_DIR=1
+    git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     bundle exec sidekiq --concurrency 1 --queue=win64
     
 ## License
 
 Enclose.IO is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
