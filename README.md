@@ -20,10 +20,10 @@ then we could execute commands similar to the following to get started.
 
     # Install Ruby
     sudo yum install libyaml-devel readline-devel zlib-devel libffi-devel openssl-devel sqlite-devel
-    # -> follow the instructions at https://rvm.io/
+    # -> Follow the instructions of https://rvm.io/
 
     # Install Python
-    # -> Make sure that `python --version` gives 2.6 or 2.7
+    # -> Make sure that `python --version` gives 2.6.x or 2.7.x
 
     # Install node and npm
     # -> https://nodejs.org/
@@ -39,22 +39,22 @@ then we could execute commands similar to the following to get started.
 
     # Install Heroku Command Line
     # -> https://toolbelt.heroku.com/
-    # heroku login
+    heroku login
 
     # Run the worker
     git clone git@github.com:enclose-io/enclose-io.git
     cd enclose-io
-    bundle install
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
-    eval $(heroku config --shell) ENCLOSE_IO_KEEP_WORK_DIR=1 bundle exec sidekiq --concurrency 1 --queue=linux64
+    bundle install
+    eval $(heroku config --shell) nohup bundle exec sidekiq --concurrency 1 --queue=linux64 2>&1 &
 
 ### Mac OS X
 
     # Install Ruby
-    # -> follow the instructions at https://rvm.io/
+    # -> Follow the instructions of https://rvm.io/
 
     # Install Python
-    # -> Make sure that `python --version` gives 2.6 or 2.7
+    # -> Make sure that `python --version` gives 2.6.x or 2.7.x
 
     # Install node and npm
     # -> https://nodejs.org/
@@ -64,14 +64,14 @@ then we could execute commands similar to the following to get started.
 
     # Install Heroku Command Line
     # -> https://toolbelt.heroku.com/
-    # heroku login
+    heroku login
     
     # Run the worker
     git clone git@github.com:enclose-io/enclose-io.git
     cd enclose-io
-    bundle install
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
-    eval $(heroku config --shell) ENCLOSE_IO_MAKE_ARGS=-j4 ENCLOSE_IO_KEEP_WORK_DIR=1 bundle exec sidekiq --concurrency 1 --queue=mac64
+    bundle install
+    eval $(heroku config --shell) nohup bundle exec sidekiq --concurrency 1 --queue=mac64 2>&1 &
 
 ### Windows
 
@@ -89,11 +89,16 @@ then we could execute commands similar to the following to get started.
 
     # Install Heroku Command Line
     # -> https://toolbelt.heroku.com/
-    # heroku login
+    heroku login
     
+    # Install 7-zip
+    # -> http://www.7-zip.org/a/7z1604-x64.msi
+    # Add C:\Program Files\7-Zip to PATH
+
     # Run the worker
     git clone https://github.com/enclose-io/enclose-io.git
     cd enclose-io
+    git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     bundle install
     FOR /F "delims=" %i IN ('heroku config --shell') DO set %i
     FOR /F "delims==" %i IN ('heroku config --shell') DO call set %i=%%i:'=%
@@ -104,4 +109,3 @@ then we could execute commands similar to the following to get started.
 ## License
 
 Enclose.IO is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
