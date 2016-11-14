@@ -91,6 +91,10 @@ then we could execute commands similar to the following to get started.
     # -> https://toolbelt.heroku.com/
     heroku login
     
+    # Install 7-zip
+    # -> http://www.7-zip.org/a/7z1604-x64.msi
+    # Add C:\Program Files\7-Zip to PATH
+
     # Run the worker
     git clone https://github.com/enclose-io/enclose-io.git
     cd enclose-io
