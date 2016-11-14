@@ -23,7 +23,7 @@ then we could execute commands similar to the following to get started.
     # -> Follow the instructions of https://rvm.io/
 
     # Install Python
-    # -> Make sure that `python --version` gives 2.6 or 2.7
+    # -> Make sure that `python --version` gives 2.6.x or 2.7.x
 
     # Install node and npm
     # -> https://nodejs.org/
@@ -39,7 +39,7 @@ then we could execute commands similar to the following to get started.
 
     # Install Heroku Command Line
     # -> https://toolbelt.heroku.com/
-    # heroku login
+    heroku login
 
     # Run the worker
     git clone git@github.com:enclose-io/enclose-io.git
@@ -54,7 +54,7 @@ then we could execute commands similar to the following to get started.
     # -> Follow the instructions of https://rvm.io/
 
     # Install Python
-    # -> Make sure that `python --version` gives 2.6 or 2.7
+    # -> Make sure that `python --version` gives 2.6.x or 2.7.x
 
     # Install node and npm
     # -> https://nodejs.org/
@@ -64,7 +64,7 @@ then we could execute commands similar to the following to get started.
 
     # Install Heroku Command Line
     # -> https://toolbelt.heroku.com/
-    # heroku login
+    heroku login
     
     # Run the worker
     git clone git@github.com:enclose-io/enclose-io.git
@@ -89,7 +89,7 @@ then we could execute commands similar to the following to get started.
 
     # Install Heroku Command Line
     # -> https://toolbelt.heroku.com/
-    # heroku login
+    heroku login
     
     # Run the worker
     git clone https://github.com/enclose-io/enclose-io.git
