@@ -95,11 +95,11 @@ then we could execute commands similar to the following to get started.
     git clone https://github.com/enclose-io/enclose-io.git
     cd enclose-io
     bundle install
+    git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     FOR /F "delims=" %i IN ('heroku config --shell') DO set %i
     FOR /F "delims==" %i IN ('heroku config --shell') DO call set %i=%%i:'=%
     set ENCLOSE_VCBUILD_ARGS=nosign
     set ENCLOSE_IO_KEEP_WORK_DIR=1
-    git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     bundle exec sidekiq --concurrency 1 --queue=win64
     
 ## License
