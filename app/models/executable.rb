@@ -19,7 +19,9 @@ class Executable < ApplicationRecord
     filename_path0 = filename_path[0..-5]
     FileUtils.mv(filename_path, filename_path0)
     raise '.zip file path should now not exist' unless !File.exist?(filename_path)
-    `7z -tzip a #{Shellwords.escape filename_path} #{Shellwords.escape filename_path0}`
+    Dir.chdir(File.dirname filename_path) do
+      `7z -tzip a #{File.basename filename_path} #{File.basename filename_path0}`
+    end
     raise '.zip file path should now exist' unless File.exist?(filename_path)
   end
 
@@ -66,8 +68,10 @@ class Executable < ApplicationRecord
     STDERR.puts "Compiling #{id}: #{attributes} => #{filename_path}"
 
     update_attribute(:phase, 'doing')
-    argv = [node_version, project.name, version, name, filename_path]
-    instance = ::Enclose::IO::Compiler.new *argv
+    instance = ::Enclose::IO::Compiler.new node_version, project.name,
+                                                         version,
+                                                         name,
+                                                         filename_path
     instance.run!
 
     case kind
@@ -83,5 +87,7 @@ class Executable < ApplicationRecord
     self.phase = :done
     self.done_at = Time.now
     save!
+    
+    instance.clean_work_dir
   end
 end

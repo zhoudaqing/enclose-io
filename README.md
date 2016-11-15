@@ -7,7 +7,7 @@ making your app ready to be used out-of-the-box.
 
 http://enclose.io/
 
-[![Build Status](https://travis-ci.org/enclose-io/enclose-io.svg)](https://travis-ci.org/enclose-io/enclose-io)
+[![Build Status](https://travis-ci.org/enclose-io/enclose-io.svg?branch=master)](https://travis-ci.org/enclose-io/enclose-io)
 [![Code Climate](https://codeclimate.com/github/enclose-io/enclose-io/badges/gpa.svg)](https://codeclimate.com/github/enclose-io/enclose-io)
 [![codecov.io](https://codecov.io/github/enclose-io/enclose-io/coverage.svg?branch=master)](https://codecov.io/github/enclose-io/enclose-io?branch=master)
 
@@ -46,6 +46,7 @@ then we could execute commands similar to the following to get started.
     cd enclose-io
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     bundle install
+    export ENCLOSE_IO_MAKE_ARGS=-j4
     eval $(heroku config --shell) nohup bundle exec sidekiq --concurrency 1 --queue=linux64 2>&1 &
 
 ### Mac OS X
@@ -71,6 +72,7 @@ then we could execute commands similar to the following to get started.
     cd enclose-io
     git remote add heroku https://git.heroku.com/pure-brushlands-17482.git
     bundle install
+    export ENCLOSE_IO_MAKE_ARGS=-j4
     eval $(heroku config --shell) nohup bundle exec sidekiq --concurrency 1 --queue=mac64 2>&1 &
 
 ### Windows
@@ -103,7 +105,6 @@ then we could execute commands similar to the following to get started.
     FOR /F "delims=" %i IN ('heroku config --shell') DO set %i
     FOR /F "delims==" %i IN ('heroku config --shell') DO call set %i=%%i:'=%
     set ENCLOSE_VCBUILD_ARGS=nosign
-    set ENCLOSE_IO_KEEP_WORK_DIR=1
     bundle exec sidekiq --concurrency 1 --queue=win64
     
 ## License
