@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'enclose-io-compiler', path: '../c'
+gem 'enclose-io-compiler', path: '../enclose-io-compiler'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.19.0'
