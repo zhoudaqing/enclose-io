@@ -5,3 +5,4 @@ class AttachmentUploader < CarrierWave::Uploader::Base
     model.project.name
   end
 end
+
