@@ -1,4 +1,6 @@
 CarrierWave.configure do |config|
+  # TODO manual delete
+  config.delete_tmp_file_after_storage = false
   config.storage    = :aws
   config.aws_bucket = ENV.fetch('S3_BUCKET_NAME')
   config.aws_acl    = 'public-read'
