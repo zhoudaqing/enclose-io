@@ -16,7 +16,7 @@ class Executable < ApplicationRecord
 
   def self.zip!(filename_path)
     raise 'filename_path should end with .zip' unless filename_path.ends_with?('.zip')
-    filename_path0 = filename_path[0..-5]
+    filename_path0 = filename_path[0..-5] + '.exe'
     FileUtils.mv(filename_path, filename_path0)
     raise '.zip file path should now not exist' unless !File.exist?(filename_path)
     Dir.chdir(File.dirname filename_path) do

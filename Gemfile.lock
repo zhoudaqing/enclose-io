@@ -57,7 +57,7 @@ GEM
     aws-sdk-resources (2.6.20)
       aws-sdk-core (= 2.6.20)
     aws-sigv4 (1.0.0)
-    bcrypt (3.1.11-x64-mingw32)
+    bcrypt (3.1.11)
     bootstrap (4.0.0.alpha5)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)

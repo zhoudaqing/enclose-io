@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   has_many :project_users, dependent: :destroy
+  has_many :users, through: :project_users
   has_many :executables, dependent: :destroy # FIXME might be slow due to AWS S3
   
   validates :name, presence: true, length: { maximum: 214 }
@@ -58,7 +59,9 @@ class Project < ApplicationRecord
   end
   
   def allocate_for(version)
-    npm_payload['versions'][version]['bin'].each do |name, _|
+    bins = npm_payload['versions'][version]['bin']
+    return if bins.nil?
+    bins.each do |name, _|
       Executable.create_for!(self, name, version)
     end
   end
